@@ -67,6 +67,7 @@ type Review = {
   location: string;
   text: string;
   rating: number;
+  proofImage: string;
 };
 
 const customerReviews: Review[] = [
@@ -74,7 +75,8 @@ const customerReviews: Review[] = [
     name: "පාරිභෝගික 01",
     location: "Sri Lanka",
     text: "තෙල් එක භාවිතා කරන්න පහසුයි. හිසකෙස් සඳහා හොඳ care එකක් ලබාගන්න පුළුවන් කියලා මට දැනුණා.",
-    rating: 5
+    rating: 5,
+    proofImage: "/reviews-proofs/1.jpeg",
   }
 ];
 
@@ -140,18 +142,16 @@ function Faq({
 
         <ChevronDown
           size={20}
-          className={`shrink-0 text-[#d4af37] transition-transform duration-300 ${
-            open ? "rotate-180" : ""
-          }`}
+          className={`shrink-0 text-[#d4af37] transition-transform duration-300 ${open ? "rotate-180" : ""
+            }`}
         />
       </button>
 
       <div
-        className={`grid transition-all duration-300 ${
-          open
-            ? "grid-rows-[1fr] pb-6"
-            : "grid-rows-[0fr]"
-        }`}
+        className={`grid transition-all duration-300 ${open
+          ? "grid-rows-[1fr] pb-6"
+          : "grid-rows-[0fr]"
+          }`}
       >
         <div className="overflow-hidden">
           <p className="text-sm leading-7 text-white/55">
@@ -171,6 +171,7 @@ export default function Home() {
   const [customerAddress, setCustomerAddress] = useState("");
   const [reviewIndex, setReviewIndex] = useState(0);
   const selectedProduct = PRODUCTS[productType];
+  const [showProof, setShowProof] = useState(false);
 
   const productPrice = selectedProduct.price;
   const deliveryPrice = selectedProduct.delivery;
@@ -624,39 +625,90 @@ export default function Home() {
           </div>
           <div className="mx-auto mt-14 max-w-3xl">
             <div className="relative overflow-hidden rounded-[2rem] border border-[#d4af37]/15 bg-white/[0.035] p-7 shadow-2xl shadow-black/20 sm:p-10">
-              <div className="absolute right-8 top-6 text-7xl font-serif leading-none text-[#d4af37]/10">"</div>
-              <div className="relative">
-                <div className="flex gap-1 text-[#d4af37]">
-                  {Array.from({
-                    length: currentReview.rating,
-                  }).map((_, index) => (
+              <div className="absolute right-8 top-6 text-7xl font-serif leading-none text-[#d4af37]/10">
+                "
+              </div>
 
-                    <Star
-                      key={index}
-                      size={18}
-                      fill="currentColor"
-                      strokeWidth={1.5}
+              <div className="relative grid gap-8 lg:grid-cols-[1fr_280px] lg:items-center">
+                {/* Review Content */}
+                <div>
+                  <div className="flex gap-1 text-[#d4af37]">
+                    {Array.from({
+                      length: currentReview.rating,
+                    }).map((_, index) => (
+                      <Star
+                        key={index}
+                        size={18}
+                        fill="currentColor"
+                        strokeWidth={1.5}
+                      />
+                    ))}
+                  </div>
+
+                  <p className="mt-7 text-lg leading-9 text-white/80 sm:text-xl">
+                    “{currentReview.text}”
+                  </p>
+
+                  <div className="mt-8 flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d4af37]/10 text-lg font-bold text-[#d4af37]">
+                      {currentReview.name.charAt(
+                        currentReview.name.length - 1
+                      )}
+                    </div>
+
+                    <div>
+                      <p className="font-semibold text-white">
+                        {currentReview.name}
+                      </p>
+                      <p className="mt-1 text-xs text-white/40">
+                        {currentReview.location}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Review Proof Image */}
+                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+                  <button
+                    type="button"
+                    onClick={() => setShowProof(true)}
+                    className="group relative w-full overflow-hidden rounded-2xl border border-[#d4af37]/20 bg-black/20 text-left"
+                  >
+                    <img
+                      src={currentReview.proofImage}
+                      alt={`Review from ${currentReview.name}`}
+                      className="h-64 w-full object-contain bg-black/30 transition-transform duration-500 group-hover:scale-105"
                     />
 
-                  ))}
-                </div>
-                <p className="mt-7 text-lg leading-9 text-white/80 sm:text-xl">
-                  “{currentReview.text}”
-                </p>
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d4af37]/10 text-lg font-bold text-[#d4af37]">
-                    {currentReview.name.charAt(
-                      currentReview.name.length - 1
-                    )}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white">
-                      {currentReview.name}
-                    </p>
-                    <p className="mt-1 text-xs text-white/40">
-                      {currentReview.location}
-                    </p>
-                  </div>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition group-hover:bg-black/30">
+                      <span className="rounded-full bg-black/70 px-4 py-2 text-sm text-white opacity-0 backdrop-blur-md transition group-hover:opacity-100">
+                        Click to enlarge
+                      </span>
+                    </div>
+                  </button>{showProof && (
+                    <div
+                      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+                      onClick={() => setShowProof(false)}
+                    >
+                      {/* Close Button */}
+                      <button
+                        type="button"
+                        onClick={() => setShowProof(false)}
+                        className="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-white/20"
+                        aria-label="Close image"
+                      >
+                        ×
+                      </button>
+
+                      {/* Large Image */}
+                      <img
+                        src={currentReview.proofImage}
+                        alt={`Review from ${currentReview.name}`}
+                        className="max-h-[90vh] max-w-[95vw] rounded-2xl object-contain shadow-2xl"
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
