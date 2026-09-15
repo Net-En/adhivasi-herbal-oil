@@ -74,9 +74,37 @@ const customerReviews: Review[] = [
   {
     name: "පාරිභෝගික 01",
     location: "Sri Lanka",
-    text: "තෙල් එක භාවිතා කරන්න පහසුයි. හිසකෙස් සඳහා හොඳ care එකක් ලබාගන්න පුළුවන් කියලා මට දැනුණා.",
+    text: "Oyalage thell Eka mara hodai mamai duwai dennama gawa mama inne abudabi mehe wathurata konide godaki giya Dan Yana Eka adui alutheni konide wawenawa thank you!",
     rating: 5,
     proofImage: "/reviews-proofs/1.jpeg",
+  },
+  {
+    name: "පාරිභෝගික 02",
+    location: "Sri Lanka",
+    text: "Akke oyalage oil eka best. Kiyanna vachana na. Marama hodai oil eka.",
+    rating: 3.5,
+    proofImage: "/reviews-proofs/2.jpeg",
+  },
+  {
+    name: "පාරිභෝගික 03",
+    location: "Sri Lanka",
+    text: "Aththatama eka hodai akki man giya masene palaweni thel eka gaththe eken pavichchi karata passe hoda results ekak labuna dan ithin digatama me thel eka thama pavichchi karanne.",
+    rating: 5,
+    proofImage: "/reviews-proofs/3.jpeg",
+  },
+  {
+    name: "පාරිභෝගික 04",
+    location: "Sri Lanka",
+    text: "Man gaththu oil eka aadiwasi her oil eka supiry.",
+    rating: 4,
+    proofImage: "/reviews-proofs/4.jpeg",
+  },
+  {
+    name: "පාරිභෝගික 05",
+    location: "Sri Lanka",
+    text: "තෙල් එක ගාලා සතියකට පස්සෙ chuty result තියෙයි.",
+    rating: 5,
+    proofImage: "/reviews-proofs/5.jpeg",
   }
 ];
 
