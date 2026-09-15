@@ -105,6 +105,27 @@ const customerReviews: Review[] = [
     text: "තෙල් එක ගාලා සතියකට පස්සෙ chuty result තියෙයි.",
     rating: 5,
     proofImage: "/reviews-proofs/5.jpeg",
+  },
+  {
+    name: "පාරිභෝගික 06",
+    location: "Sri Lanka",
+    text: "කලිනුත් අපි එකක් ගත්තා මිස් ඒකෙන් ගොඩාක් ප්‍රතිඵල තියෙනවා නංගිගෙ කොන්ඩෙ ඔක්කොම ගිහින් තිබ්බෙ මේ තෙල් එක ගෑවට පස්සෙ දැන් යන්නෑ වැවෙනවා තෑන්ක්ස් මිස් ඔයාලට ගොඩාක් පින්.",
+    rating: 5,
+    proofImage: "/reviews-proofs/6.jpeg",
+  },
+  {
+    name: "පාරිභෝගික 07",
+    location: "Sri Lanka",
+    text: "Good resalt ekak thiye miss.",
+    rating: 5,
+    proofImage: "/reviews-proofs/7.jpeg",
+  },
+  {
+    name: "Thisari sajani",
+    location: "Sri Lanka",
+    text: "මාත් මේ දෙවනි සැරේට ගන්නෙ.. කලොන් සැරේ ලොන්ඩෙ ය්න එකත් ටිකක් අඩු උනා සුදු වෙලා තින්න කෙස් තරමක් දුරට කලු උනා අගල් දෙකක් කොන්ඩෙ වැවුන.පලවෙනි එකෙම්ම රිසල්ට් තියන නිසයි ආයෙම ඕඩෙර් එකක් දන්නෙ.",
+    rating: 5,
+    proofImage: "/reviews-proofs/8.jpeg",
   }
 ];
 
