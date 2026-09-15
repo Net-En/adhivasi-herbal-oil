@@ -249,7 +249,7 @@ export default function Home() {
   const currentReview = customerReviews[reviewIndex];
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#06130d] text-white">
+    <main className="min-h-screen overflow-x-hidden bg-[#0a241a] text-white">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#06130d]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-10">
           <a
@@ -299,7 +299,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden bg-[#06130E] py-20 sm:py-24 lg:py-28">
+      <section className="relative overflow-hidden bg-[#0a241a] py-20 sm:py-24 lg:py-28">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-[-180px] top-[-120px] h-[500px] w-[500px] rounded-full bg-[#17613D]/20 blur-[140px]" />
           <div className="absolute bottom-[-200px] right-[-150px] h-[500px] w-[500px] rounded-full bg-[#D4AF37]/10 blur-[140px]" />
@@ -316,7 +316,7 @@ export default function Home() {
             </div>
           </div>
           <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
-            <div className="relative order-2 flex min-h-[520px] items-center justify-center lg:order-1">
+            <div className="relative order-1 flex min-h-[520px] items-center justify-center lg:order-1">
               <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17613D]/40 blur-[100px]" />
               <div className="absolute h-[390px] w-[390px] rounded-full border border-[#D4AF37]/10 sm:h-[460px] sm:w-[460px]" />
               <div className="absolute h-[320px] w-[320px] rounded-full border border-[#D4AF37]/10 sm:h-[380px] sm:w-[380px]" />
@@ -340,7 +340,7 @@ export default function Home() {
                 <p className="mt-1 text-xl font-black text-[#D4AF37]">{PRODUCT_SIZE}</p>
               </div>
             </div>
-            <div className="relative z-10 order-1 lg:order-2">
+            <div className="relative z-10 order-2 lg:order-2">
               <h1 className="max-w-3xl text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
                 ඔබේ හිසකෙස්වලට
                 <br />
@@ -359,7 +359,7 @@ export default function Home() {
                   },
                   {
                     icon: Check,
-                    text: "කෙස් ගස් ශක්තිමත් කිරීමට",
+                    text: "හිස කෙස් ශක්තිමත් කිරීමට",
                   },
                   {
                     icon: Check,
@@ -427,7 +427,7 @@ export default function Home() {
                   />
 
                   <span className="text-[11px] text-[#819087]">
-                    දේශීය නිෂ්පාදනය
+                    ආනයනය කරන ලද නිෂ්පාදනයක්
                   </span>
                 </div>
                 <div className="h-4 w-px bg-white/10" />
